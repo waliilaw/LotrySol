@@ -1,0 +1,40 @@
+[project-name]
+├── app
+│   ├── src
+│   │   ├── components
+│   │   │   ├── ConnectWallet.tsx
+│   │   │   ├── LotteryCard.tsx
+│   │   │   └── Navigation.tsx
+│   │   ├── pages
+│   │   │   ├── _app.tsx
+│   │   │   └── index.tsx
+│   │   └── utils
+│   │       └── constants.ts
+├── programs
+│   └── lottery
+│       ├── src
+│       │   └── lib.rs
+│       ├── Cargo.toml
+│       └── Xargo.toml
+├── tests
+│   └── lottery.ts
+├── package.json
+├── tsconfig.json
+└── README.md
+
+[Cargo.toml]
+[package]
+name = "lottery"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anchor-lang = "0.26.0"
+solana-program = "1.10.32"
+
+[features]
+default = ["client"]
+client = ["anchor-client"]

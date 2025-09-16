@@ -1,0 +1,29 @@
+{
+  "name": "lotrysol",
+  "version": "1.0.0",
+  "description": "A Solana lottery application for creating and managing lotteries.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "@solana/web3.js": "latest",
+    "anchor": "latest",
+    "ethers": "latest",
+    "chai": "latest",
+    "jest": "latest"
+  },
+  "devDependencies": {
+    "typescript": "latest",
+    "@types/react": "latest",
+    "@types/node": "latest"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
