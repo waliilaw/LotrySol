@@ -1,50 +1,34 @@
-// This file contains the test cases for the lottery smart contract, ensuring that all functionalities work as expected.
+use anchor_lang::prelude::*;
 
-import { expect } from "chai";
-import { ethers } from "hardhat";
-import { Contract } from "ethers";
-import { SignerWithAddress } from "@nomicfoundation/hardhat-ethers/signers";
 
-describe("Lottery", function () {
-    let lottery: Contract;
-    let owner: SignerWithAddress;
-    let addr1: SignerWithAddress;
-    let addr2: SignerWithAddress;
-    const entryFee = ethers.parseEther("0.1"); // ethers v6
+// Imports the core Anchor framework utilities and types
+// Imports serialization traits (note: there's a typo, should be Serialize, Deserialize)
 
-    beforeEach(async function () {
-        // get accounts
-        [owner, addr1, addr2] = await ethers.getSigners();
+// #[program] macro marks this as an Anchor program module
 
-        // deploy contract
-        const Lottery = await ethers.getContractFactory("Lottery");
-        lottery = await Lottery.deploy();
-        await lottery.waitForDeployment(); // ethers v6
-    });
+// Defines the main program module named "lottery"
 
-    describe("Deployment", function () {
-        it("Should set the right manager", async function () {
-            expect(await lottery.manager()).to.equal(owner.address);
-        });
+// Brings all items from outer scope
 
-        it("Should set correct entry fee", async function () {
-            expect(await lottery.entryFee()).to.equal(entryFee);
-        });
-    });
+// Initialize function - called when creating a new lottery
+// ctx: Context holds all account information
+// entry_fee: Amount in lamports (1 SOL = 1 billion lamports) required to enter
 
-    describe("Entering lottery", function () {
-        it("Should allow players to enter with correct fee", async function () {
-            await lottery.connect(addr1).enter({ value: entryFee });
-            const players = await lottery.viewPlayers();
-            expect(players[0]).to.equal(addr1.address);
-        });
+// Get mutable reference to lottery account
 
-        it("Should reject entries with incorrect fee", async function () {
-            await expect(
-                lottery.connect(addr1).enter({ 
-                    value: ethers.parseEther("0.05") 
-                })
-            ).to.be.revertedWith("Entry Fee is 0.1 ETH");
-        });
-    });
-});
+// Set manager's public key (address) from the signer
+
+// Set entry fee amount
+
+// Set lottery as active
+
+// Initialize empty vector to store player addresses
+
+// Set winner as None (no winner yet)
+
+// Return success
+
+// Define account validation structure for Initialize instruction
+// Account validation rules (incomplete in your code)
+// init: Create new account
+// payer: Who pays for account creation

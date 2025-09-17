@@ -10,19 +10,22 @@
     "test": "jest"
   },
   "dependencies": {
+    "@solana/wallet-adapter-react": "^0.15.39",
+    "@solana/wallet-adapter-wallets": "^0.19.37",
+    "@solana/web3.js": "latest",
+    "anchor": "latest",
+    "chai": "latest",
+    "ethers": "latest",
+    "jest": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "@solana/web3.js": "latest",
-    "anchor": "latest",
-    "ethers": "latest",
-    "chai": "latest",
-    "jest": "latest"
+    "solana-wallet": "^1.0.2"
   },
   "devDependencies": {
-    "typescript": "latest",
+    "@types/node": "latest",
     "@types/react": "latest",
-    "@types/node": "latest"
+    "typescript": "latest"
   },
   "author": "Your Name",
   "license": "MIT"
